@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500">
+    <defs>
+      <linearGradient id="glass" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#fff7f3"/><stop offset=".27" stop-color="#f2d4d2"/><stop offset=".74" stop-color="#dca6ac"/><stop offset="1" stop-color="#f8e0dd"/></linearGradient>
+      <linearGradient id="cap" x1="0" y1="0" x2="1" y2=".2"><stop stop-color="#a46f58"/><stop offset=".25" stop-color="#ffe8b2"/><stop offset=".54" stop-color="#b07c53"/><stop offset=".85" stop-color="#edcf96"/><stop offset="1" stop-color="#93634d"/></linearGradient>
+      <linearGradient id="gold" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#9d6658"/><stop offset=".25" stop-color="#f9e0a4"/><stop offset=".65" stop-color="#b98859"/><stop offset="1" stop-color="#e9c78b"/></linearGradient>
+      <linearGradient id="fluid" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#f2d4d2"/><stop offset="1" stop-color="#dca6ac"/></linearGradient>
+      <filter id="shadow" x="-30%" y="-30%" width="160%" height="170%"><feGaussianBlur stdDeviation="15"/></filter>
+    </defs>
+    <ellipse cx="253" cy="434" rx="145" ry="26" fill="#5c3045" opacity=".18" filter="url(#shadow)"/>
+    <g><rect x="135" y="182" width="230" height="63" rx="16" fill="url(#gold)"/>
+        <rect x="129" y="208" width="242" height="45" rx="10" fill="url(#cap)" opacity=".97"/>
+        <rect x="142" y="247" width="216" height="164" rx="44" fill="url(#glass)" stroke="#fff" stroke-width="5" stroke-opacity=".55"/>
+        <path d="M155 287 Q251 307 345 285 V371 Q345 396 320 398 H179 Q155 396 155 370Z" fill="url(#fluid)" opacity=".5"/>
+        <text x="250" y="294" text-anchor="middle" font-size="16" fill="#735c54" font-weight="700" letter-spacing="2">BAKIM</text>
+        <text x="250" y="334" text-anchor="middle" font-size="22" fill="#513c42" font-weight="700">SKIN CLOUD</text>
+        <text x="250" y="359" text-anchor="middle" font-size="10" fill="#705c5f" letter-spacing="1">DAILY FACE CREAM</text></g>
+    <path d="M195 198 Q188 232 194 267" stroke="#fff" stroke-width="10" opacity=".45" stroke-linecap="round" fill="none"/>
+    </svg>

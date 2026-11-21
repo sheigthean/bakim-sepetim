@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500">
+    <defs>
+      <linearGradient id="glass" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#fff7f3"/><stop offset=".27" stop-color="#e6a9b2"/><stop offset=".74" stop-color="#d47c8e"/><stop offset="1" stop-color="#f8e0dd"/></linearGradient>
+      <linearGradient id="cap" x1="0" y1="0" x2="1" y2=".2"><stop stop-color="#a46f58"/><stop offset=".25" stop-color="#ffe8b2"/><stop offset=".54" stop-color="#b07c53"/><stop offset=".85" stop-color="#edcf96"/><stop offset="1" stop-color="#93634d"/></linearGradient>
+      <linearGradient id="gold" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#9d6658"/><stop offset=".25" stop-color="#f9e0a4"/><stop offset=".65" stop-color="#b98859"/><stop offset="1" stop-color="#e9c78b"/></linearGradient>
+      <linearGradient id="fluid" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#e6a9b2"/><stop offset="1" stop-color="#d47c8e"/></linearGradient>
+      <filter id="shadow" x="-30%" y="-30%" width="160%" height="170%"><feGaussianBlur stdDeviation="15"/></filter>
+    </defs>
+    <ellipse cx="253" cy="434" rx="145" ry="26" fill="#5c3045" opacity=".18" filter="url(#shadow)"/>
+    <g><rect x="223" y="113" width="54" height="54" rx="9" fill="url(#gold)"/>
+        <rect x="214" y="69" width="72" height="68" rx="13" fill="url(#cap)"/>
+        <rect x="235" y="144" width="30" height="42" rx="9" fill="#e8ccd0" opacity=".7"/>
+        <rect x="165" y="177" width="170" height="237" rx="30" fill="url(#glass)" stroke="#fff" stroke-opacity=".65" stroke-width="7"/>
+        <path d="M190 215 H310 V358 Q310 380 289 380 H211 Q190 380 190 358Z" fill="url(#fluid)" opacity=".7"/>
+        <rect x="189" y="247" width="122" height="110" rx="8" fill="#fff9ef" opacity=".93"/>
+        <text x="250" y="277" text-anchor="middle" font-size="15" font-weight="700" fill="#87635c" letter-spacing="2">BAKIM</text>
+        <text x="250" y="311" text-anchor="middle" font-size="17" font-weight="700" fill="#523f41">ROSE DROP</text>
+        <text x="250" y="335" text-anchor="middle" font-size="9" fill="#8b7070" letter-spacing="1">HYDRATING SERUM</text></g>
+    <path d="M195 198 Q188 232 194 267" stroke="#fff" stroke-width="10" opacity=".45" stroke-linecap="round" fill="none"/>
+    </svg>

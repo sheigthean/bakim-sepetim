@@ -1,0 +1,3 @@
+document.addEventListener('submit',function(e){e.preventDefault();alert('Tanıtım paneli: Bu ekranda veriler kaydedilmez veya değiştirilmez.');},true);
+document.addEventListener('click',function(e){const l=e.target.closest('a[href]');if(l&&(l.hasAttribute('data-demo-export')||/\/admin\/export\//.test(l.getAttribute('href')||''))){e.preventDefault();alert('Rapor indirme canlı yönetim panelinde çalışır.');}},true);
+document.addEventListener('click',e=>{const btn=e.target.closest('[data-admin-menu]');if(btn){document.getElementById('adminSidebar')?.classList.toggle('open');document.getElementById('sidebarMask')?.classList.toggle('visible');}});

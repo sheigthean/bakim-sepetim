@@ -1,0 +1,101 @@
+/* Bakım Sepetim · Rose Gold Atelier admin system · V5 */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap');
+:root{--ink:#503741;--pink:#945769;--muted:#917982;--soft:#f9efeb;--line:#ecdad4;--nav:#fbf2ee;--navmute:#8b6f78;--radius:18px;--sh:0 12px 30px #6d45430c}
+body{background:#fffaf7;color:var(--ink);font-family:'DM Sans','Segoe UI',Arial,sans-serif}
+h1,h2,h3{font-family:Georgia,serif;letter-spacing:-.03em;font-weight:500;color:#563640}
+h1{font-size:32px}h2{font-size:22px}h3{font-size:17px}
+.admin-body{background:#fffaf7}
+.admin-sidebar{background:linear-gradient(180deg,#fbf1ec 0,#f7e8e5 100%);color:#634650;border-right:1px solid #ecd9d4;padding:17px 14px}
+.admin-sidebar-logo{padding:7px 8px 25px;text-align:center;border-bottom:1px solid #ecd9d4}
+.admin-sidebar-logo>a{display:flex;align-items:center;gap:5px;justify-content:center}
+.admin-sidebar-logo img{width:78px;height:75px;object-fit:contain;margin-left:0;max-height:75px;filter:none;mix-blend-mode:multiply}
+.admin-logo-text{text-align:left;font:500 21px/1.08 Georgia,serif;color:#573943}
+.admin-logo-text small{display:block;font:800 10px/1.5 'DM Sans',Arial,sans-serif;color:#c15b87;white-space:nowrap;letter-spacing:-.02em;margin-top:4px}
+.admin-sidebar-logo>span{color:#9c7c82;margin:12px 0 0;font-size:9px;letter-spacing:.18em}
+.admin-sidebar-logo b{background:#e9cbc6;color:#78535c;border-radius:100px;font-size:8px;padding:4px 7px}
+.sidebar-label{color:#ae8c90;padding:24px 14px 8px}
+.sidebar-menu{gap:3px}
+.sidebar-menu a,.sidebar-bottom a,.sidebar-bottom button{color:#775e67;border-radius:11px;padding:12px 14px;font-size:12px}
+.sidebar-menu a:hover,.sidebar-menu a.active{background:#fffaf8;color:#7c4556;box-shadow:0 5px 12px #77484712}
+.sidebar-menu a.active{background:#90586a;color:white;box-shadow:0 6px 16px #74404a29}
+.sidebar-menu a.active .icon{color:#f8e2d7}
+.sidebar-bottom{border-top:1px solid #e5d3cd}
+.sidebar-bottom a:hover,.sidebar-bottom button:hover{background:#fff8f4;color:#804e5e}
+.admin-topbar{background:#fffdfb;border-bottom-color:#f0e1db;height:78px;padding:0 30px}
+.admin-topbar>span{color:#9b7c84}
+.topbar-slash{color:#cfa6a8}
+.country-pill{background:#f9e8e1;color:#995e64}
+.payment-pill{background:#fbf1e7;color:#a4715b}
+.topbar-store{background:#fff7f4;color:#84515f;border:1px solid #e5c7c4;padding:10px 15px;border-radius:9px}
+.topbar-store:hover{background:#f7e6e2}
+.admin-content{max-width:1570px;padding:34px 32px 35px}
+.admin-heading{position:relative;margin-bottom:24px;padding:19px 26px 21px;border:1px solid #f1ded8;background:linear-gradient(105deg,#fff3ee 0%,#fce7e7 70%,#f6e9db 100%);border-radius:19px;min-height:126px;overflow:hidden;isolation:isolate}
+.admin-heading:after{content:"✧";position:absolute;right:23%;top:-24px;color:#d6ab8b;font-size:90px;opacity:.29;z-index:-1}
+.admin-heading h1{font-size:32px;margin:7px 0 5px}
+.admin-heading p{color:#886873;font-size:12px}
+.admin-eyebrow{color:#b87787;letter-spacing:.2em;font-size:10px}
+.admin-button{background:#935668;color:#fff;border-radius:10px;font-weight:800;border-color:#935668;box-shadow:0 5px 12px #764d541e}
+.admin-button:hover{background:#784655;border-color:#784655}
+.admin-button.secondary{background:#fffaf8;border-color:#e6cbc9;color:#7e4d5c;box-shadow:none}
+.admin-button.secondary:hover{background:#f6e9e5}
+.stat-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.stat-card{min-height:165px;border:1px solid #efdad5;background:linear-gradient(165deg,#fffefc,#fdf4f2);box-shadow:0 7px 25px #6d474611;border-radius:16px;padding:20px;position:relative;overflow:hidden}
+.stat-card:after{content:"✧";font:42px Georgia,serif;color:#e7c6b0;position:absolute;right:16px;top:13px;opacity:.58}
+.stat-card:nth-child(2){background:linear-gradient(145deg,#fffdfb,#f7e7e8)}
+.stat-card:nth-child(3){background:linear-gradient(145deg,#fffefa,#f6eae2)}
+.stat-card:nth-child(4){background:linear-gradient(145deg,#fffdfb,#f6e1e7)}
+.stat-icon{background:#f7e9e5!important;color:#aa677b!important;border:1px solid #f0d4d0;width:38px;height:38px;margin-bottom:13px;border-radius:11px}
+.stat-card>span:not(.stat-icon){font-size:11px;color:#896f79}
+.stat-card strong{font:600 30px Georgia,serif;color:#52363f;letter-spacing:-.03em;margin:4px 0}
+.stat-card strong.stat-money{font-size:26px}
+.stat-card small{color:#a2868a}
+.admin-panel{background:#fffdfb;border:1px solid #eeded8;box-shadow:0 8px 25px #5a3b4009;border-radius:17px;padding:22px}
+.panel-heading h2{font-size:21px}
+.panel-link{color:#a45f70}
+.bar-track{background:linear-gradient(0deg,#fbf1ee,#fffaf7);border:1px solid #f0e5df;border-radius:7px}
+.bar-fill{background:linear-gradient(0deg,#a76b7a,#edd2cc);border-radius:8px 8px 2px 2px}
+.bar-number,.bar-label{color:#a1868b}
+.stock-low{background:#fdebe9;color:#b85863}
+.stock-ok{background:#eaf6ed;color:#267c50}
+.nice-empty{color:#618b65}
+.mini-list a{border-color:#f3e9e4}
+.mini-list img,.table-product img{background:#f5e8e4;object-fit:contain}
+.admin-table th{background:#fbf2ed;color:#967a7e;border-color:#eee0da;font-size:10px}
+.admin-table td{color:#6d5860;border-color:#f4e9e5}
+.admin-table td b{color:#553c46}
+.admin-table tr:hover td{background:#fdf6f3}
+.table-link{color:#a26372!important}
+.table-filters input,.table-filters select,.admin-form input,.admin-form textarea,.admin-form select{background:#fffdfb;border-color:#e8d6d1;color:#5c4048}
+.table-filters input:focus,.table-filters select:focus,.admin-form input:focus,.admin-form select:focus,.admin-form textarea:focus{border-color:#ad7082;box-shadow:0 0 0 3px #f0dee0}
+.status-new{background:#fce5ed;color:#a85877}
+.status-confirmed,.status-preparing,.status-processing{background:#eeeaf3;color:#8962a2}
+.status-on_delivery,.status-shipped{background:#faebdc;color:#a97337}
+.status-delivered,.status-paid{background:#e7f5e9;color:#317f55}
+.status-cancelled,.status-payment_failed{background:#ffe8e8;color:#ae5561}
+.payment-summary-strip{background:linear-gradient(100deg,#f9e8e6,#fbf1e8);border-color:#efdbd2;color:#845c66}
+.payment-summary-strip b{color:#995869}
+.admin-alert.info{background:#f9efeb;color:#985e6d}
+.admin-alert.success{background:#edf7ef;color:#3a825c}
+.payment-history{background:#fff9f7;border-color:#eedcd6}
+.admin-foot{color:#b0969c}
+.login-body{background:#fffaf7}
+.login-backdrop{background:#fffaf7}
+.login-art{background:linear-gradient(145deg,#f6e5dc,#f9dedd)}
+.login-art img{object-fit:contain;mix-blend-mode:multiply;filter:drop-shadow(0 20px 15px #a9757a23)}
+.login-art span{color:#9c7580}
+.login-art span strong{color:#9a5f6e}
+.login-card{background:#fffdfb}
+.login-card h1{font:500 43px Georgia,serif;color:#573b44}
+.login-card p{color:#947981}
+.login-card input{border-color:#e9d8d2;background:#fffdfb}
+.login-logo{width:220px;border-radius:14px;mix-blend-mode:multiply}
+.login-back{color:#9f747c}
+@media(max-width:1250px){.admin-content{padding:25px 20px}.admin-heading{padding:17px 22px}.stat-card strong.stat-money{font-size:21px}.admin-sidebar-logo img{width:64px}.admin-logo-text{font-size:18px}}
+@media(max-width:1010px){.stat-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.admin-logo-text{font-size:15px}.admin-sidebar-logo img{width:62px}}
+@media(max-width:700px){.admin-topbar{height:63px;padding:0 13px}.admin-content{padding:19px 13px}.admin-heading{padding:18px 15px;min-height:0}.admin-heading h1{font-size:25px}.stat-card{min-height:138px;padding:14px}.stat-card strong.stat-money{font-size:16px}.stat-card strong{font-size:27px}.login-card h1{font-size:35px}.admin-sidebar-logo img{width:74px}.admin-logo-text{font-size:20px}}
+
+.rose-stats{grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+.rose-stats .stat-card{padding:16px;min-height:163px}
+.rose-stats .stat-card strong.stat-money{font-size:20px}
+@media(max-width:1250px){.rose-stats{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:700px){.rose-stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.rose-stats .stat-card{padding:12px;min-height:140px}.rose-stats .stat-card strong.stat-money{font-size:16px}}
