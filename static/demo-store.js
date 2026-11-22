@@ -1,4 +1,4 @@
-/* Bakım Sepetim: client-side basket only. Pricing and stock verified server-side. */
+/* Bakım Sepetim GitHub demo: tarayıcı içi sepet ve katalog filtresi. Canlı mağazada fiyat ve stok sunucuda doğrulanır. */
 (()=>{
   const KEY='bakim_sepetim_v5_github_demo_cart';
   const SITE_ROOT=new URL('../',document.currentScript.src);
@@ -82,6 +82,40 @@
     if(event.target.closest('[data-qty-plus]')){const o=$('#detailQty');if(o)o.textContent=Math.min(50,Number(o.textContent)+1);if($('[data-quantity]'))$('[data-quantity]').dataset.quantity=o.textContent;}
     if(event.target.closest('[data-qty-minus]')){const o=$('#detailQty');if(o)o.textContent=Math.max(1,Number(o.textContent)-1);if($('[data-quantity]'))$('[data-quantity]').dataset.quantity=o.textContent;}
   });
+
+  function applyCatalogFilters(){
+    const grid=$('.products-grid');if(!grid)return;
+    const params=new URLSearchParams(location.search);
+    const cat=(params.get('kategori')||'').trim();
+    const q=(params.get('q')||'').trim().toLocaleLowerCase('tr-TR');
+    const sort=params.get('sirala')||'one_cikanlar';
+    const cards=$$('.product-card',grid).map(card=>({card,p:product(card.querySelector('[data-add]')?.dataset.add)})).filter(x=>x.p);
+    if(!cards.length)return;
+    cards.forEach((x,i)=>{if(x.card.dataset.order===undefined)x.card.dataset.order=i;});
+    let visible=0;
+    cards.forEach(({card,p})=>{
+      const text=`${p.name} ${p.brand} ${p.category}`.toLocaleLowerCase('tr-TR');
+      const ok=(!cat||p.category===cat)&&(!q||text.includes(q));
+      card.hidden=!ok;if(ok)visible++;
+    });
+    const sorted=[...cards].sort((a,b)=>{
+      if(sort==='fiyat_artan')return a.p.price_kurus-b.p.price_kurus;
+      if(sort==='fiyat_azalan')return b.p.price_kurus-a.p.price_kurus;
+      if(sort==='yeni')return b.p.id-a.p.id;
+      return a.card.dataset.order-b.card.dataset.order;
+    });
+    sorted.forEach(x=>grid.append(x.card));
+    let none=$('#catalogEmpty');
+    if(!visible){if(!none){none=document.createElement('div');none.id='catalogEmpty';none.className='drawer-empty';none.style.gridColumn='1/-1';
+        const h=document.createElement('h3');h.textContent='Aradığın ürünü bulamadık';const t=document.createElement('p');t.textContent='Başka bir kelime dene ya da tüm ürünlere göz at.';
+        const a=document.createElement('a');a.className='btn btn-pink';a.href='./#urunler';a.textContent='Tüm ürünler';none.append(h,t,a);grid.append(none);}}
+    else none?.remove();
+    const counter=$('.rose-product-counter');if(counter)counter.textContent=`${visible} ürün gösteriliyor`;
+    $$('.category-filters a').forEach(a=>{const c=new URL(a.href).searchParams.get('kategori')||'';a.classList.toggle('selected',c===cat);});
+    $$('input[name="q"]').forEach(i=>{if(i.type!=='hidden'||i.closest('.catalog-sort'))i.value=params.get('q')||'';});
+    const sortForm=$('.catalog-sort');if(sortForm){const k=sortForm.querySelector('input[name="kategori"]');if(k)k.value=cat;const sel=sortForm.querySelector('select');if(sel)sel.value=sort;}
+    if((cat||q||params.has('sirala'))&&!location.hash)$('#urunler')?.scrollIntoView();
+  }
   document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDrawer();});
   $('#checkoutForm')?.addEventListener('submit',submitOrder);
   $('#districtSelect')?.addEventListener('change',renderCheckout);
@@ -91,6 +125,6 @@
     fetch(siteUrl('/api/shipping.json')).then(r=>r.ok?r.json():null)
   ]).then(([p,s])=>{products=p;shipping=s;
     let changed=false;for(const [id,qty] of Object.entries(cart)){const pr=product(id);if(!pr||pr.stock<1){delete cart[id];changed=true;}else if(qty>pr.stock){cart[id]=Math.min(pr.stock,50);changed=true;}}
-    if(changed)localStorage.setItem(KEY,JSON.stringify(cart));renderAll();
+    if(changed)localStorage.setItem(KEY,JSON.stringify(cart));renderAll();applyCatalogFilters();
   }).catch(()=>{renderAll();toast('Ürün bilgileri yüklenemedi. Sayfayı yenileyin.');});
 })();

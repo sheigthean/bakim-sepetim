@@ -1,8 +1,8 @@
 Merhaba, Bakım Sepetim yeni Rose Gold Atelier tasarımının önizlemesini incelemeniz için aşağıdaki bağlantıyı paylaşıyorum:
 
-https://sheigthean.github.io/bakim-sepetim-demo/
+https://sheigthean.github.io/bakim-sepetim/
 
-Mağaza, ürünler, sepet ve yönetim panelinin örnek görünümünü inceleyebilirsiniz. Değişiklik isteklerinizi ise https://sheigthean.github.io/bakim-sepetim-demo/inceleme/ adresinden iletebilirsiniz.
+Mağaza, ürünler, sepet ve yönetim panelinin örnek görünümünü inceleyebilirsiniz. Değişiklik isteklerinizi ise https://sheigthean.github.io/bakim-sepetim/inceleme/ adresinden iletebilirsiniz.
 
 Not: Bu bir tanıtım sürümüdür; gerçek sipariş ya da ödeme alınmaz.
 
